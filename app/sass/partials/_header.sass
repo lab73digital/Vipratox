@@ -1,0 +1,55 @@
+header
+  position: fixed
+  z-index: 999
+  width: 100%
+  top: 0
+  overflow: hidden
+  background-color: $c-white
+  @extend %bsh
+  @extend %opacity
+  & .container
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 2em 0
+    & .logo
+
+      & a
+        @extend %transition
+        background: $c-light-blue
+        padding: 1em
+        font-size: 2.8rem
+        font-weight: 900
+        color: $c-white
+        &:hover
+          opacity: 0.7
+
+
+    & nav
+      width: 50%
+      display: flex
+      justify-content: space-between
+      & a
+        @extend %transition
+        font-size: 1.4rem
+        font-weight: 600
+        text-transform: uppercase
+        color: #33495e
+        &:hover
+          opacity: 0.7
+
+
+
+.fixed
+  position: fixed
+  top: 0
+  width: 100%
+  z-index: 100
+
+.menu-slim
+  display: none
+
+
+.mobile-menu
+  .nav-mobile
+    display: none

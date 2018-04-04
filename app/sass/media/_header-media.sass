@@ -1,0 +1,66 @@
+@media screen and (max-width: 992px)
+  header
+    .container
+      .logo
+        font-size: 3rem
+      nav
+        a
+          font-size: 1.8rem
+@media screen and (max-width: 756px)
+  header
+    .container
+      nav
+        display: none
+
+
+
+
+
+  //Menu burger button
+  .menu-slim
+    display: block
+    background: transparent
+    position: absolute
+    z-index: 555
+    top: 50%
+    transform: translateY(-50%)
+    right: 20px
+    height: 17px
+    width: 50px
+    cursor: pointer
+    &:before,
+    &:after
+      background: $c-white
+      backface-visibility: hidden
+      content: ""
+      height: 3px
+      left: 0
+      transition: 0.75s
+      width: 30px
+
+
+    &:before
+      box-shadow:  $c-white 0 7px 0 0
+      position: absolute
+      top: 0
+
+
+    &:after
+      position: absolute
+      top: calc(100% - 3px)
+
+
+  .menu-js-toggle
+    &:before
+      box-shadow: transparent 0 0 0 0
+      top: 50%
+      transform: rotate(225deg)
+
+    &:after
+      top: 50%
+      transform: rotate(315deg)
+
+
+
+
+

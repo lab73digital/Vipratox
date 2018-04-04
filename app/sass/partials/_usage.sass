@@ -1,0 +1,34 @@
+.usage
+    padding-top: 1em
+    h2
+        margin-bottom: 30px
+        opacity: 0
+.usage-wrap
+    display: flex
+    justify-content: center
+    overflow: hidden
+    padding: 15px 0 50px 0
+    p
+      font-size: 16px
+    & .usage-item
+        flex-basis: 30%
+        padding: 200px 25px 20px 25px
+        background-repeat: no-repeat
+        background-size: cover
+        color: #1d1d1d
+        text-align: center
+        margin: 0 1em
+        box-shadow: 0 7px 34px 5px #dcd8ef
+
+        &--1
+          background-image: url(../img/img-usage-1.jpg)
+          @extend %opacity
+          @extend %yTransform
+        &--2
+          background-image: url(../img/img-usage-2.jpg)
+          @extend %opacity
+          @extend %yTransform
+        &--3
+          background-image: url(../img/img-usage-3.jpg)
+          @extend %opacity
+          @extend %yTransform

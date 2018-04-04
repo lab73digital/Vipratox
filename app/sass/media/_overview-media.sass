@@ -1,0 +1,83 @@
+@media screen and (max-width: 1210px)
+  .overview
+    &-wrapper
+      margin: 0 1.5em
+
+@media screen and (max-width: 992px)
+  .overview
+    &-wrapper
+      background-position: 30% 50%
+    &-content
+      width: 70%
+      margin-left: 30%
+      img
+        width: 65%
+      h2
+        font-size: $size-26
+      h1
+        font-size: $size-24
+        padding: 0.8em
+      p
+        font-size: 15px
+
+      & .description--thing
+        font-size: 15px
+
+
+@media screen and (max-width: 576px)
+  .overview
+    padding-top: 7em
+    &-wrapper
+      background-image: none
+      background-repeat: no-repeat
+      background-size: contain
+      background-position: 50% 50%
+      margin: 0
+    &-content
+      padding: 0
+      width: 100%
+      margin: 0
+      h2
+        font-size: $size-22
+        padding: 1em 0 0 1em
+      h1
+        font-size: $size-17
+        margin-top: 0
+        padding: 1em 0 1em 1em
+      p
+        font-size: $size-14
+        font-weight: 500
+        margin-bottom: 0
+        padding: 0 0 1em 1.3em
+      .description
+        padding-bottom: 370px
+      .description--thing
+        padding: 0.5em 0 0.5em 1em
+        &:last-of-type
+          padding-top: 0
+          padding-bottom: 2em
+    &__img
+      display: none
+    .overview--mob-bg
+      background-image: url(../img/overview-mobile-bg.png)
+      background-repeat: no-repeat
+      background-size: cover
+      background-position: 15% 35%
+      position: relative
+      .overview-mob-prod
+        display: block
+        width: 45%
+        height: auto
+        position: absolute
+        top: 60%
+        transform: translateY(-50%)
+        right: 10%
+        opacity: 0
+
+
+  @media screen and (max-width: 330px)
+    .overview
+      &-wrapper
+      &-content
+      h2
+        font-size: $size-18

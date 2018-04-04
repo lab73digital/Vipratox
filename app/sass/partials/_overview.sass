@@ -1,0 +1,80 @@
+.overview
+  padding-top: 6em
+  &__content
+    background-color: #fff
+    border-radius: 0.5rem
+    display: flex
+    flex-wrap: wrap
+    text-align: left
+    .left-part
+      width: 50%
+    .right-part
+      width: 50%
+    p
+      font-size: 1.6rem
+      color: #839bb1
+      width: 90%
+  &__top
+    background-color: #f2f8fc
+    text-align: center
+    .left-part
+      padding-top: 2rem
+      padding-left: 7rem
+    .right-part
+      text-align: center
+      img
+        margin-bottom: -2px
+    & .overview__content
+      border-bottom-left-radius: 0
+      border-bottom-right-radius: 0
+      padding-top: 4rem
+      position: relative
+      box-shadow: 12px 0 15px -4px rgba(222,231,237,.9), -12px 0 8px -4px rgba(222,231,237,.9)
+      &:after
+        content: ""
+        @extend %ham
+        bottom: 0
+        width: 88%
+        height: 1px
+        background-color: #deecf6
+  &__bottom
+    .left-part
+      img
+        margin-bottom: -3px
+        border-bottom-left-radius: 0.5em
+    .right-part
+      padding-top: 2rem
+      padding-left: 7rem
+
+    & .overview__content
+      padding-top: 4rem
+      box-shadow: 0 0 15px 8px rgba(222,231,237,.9)
+      border-top-left-radius: 0
+      border-top-right-radius: 0
+
+  h1
+    padding-top: 3em
+    padding-bottom: 1em
+    margin-top: 0
+    span
+      border: 1px solid $c-light-blue
+    .bold
+      font-weight: 900
+      color: $c-white
+      background-color: $c-light-blue
+      padding: 15px 25px 15px 30px
+    .blue
+      padding: 15px 35px 15px 35px
+      margin-left: -0.5em
+
+.heading
+  font-size: 3.2rem
+  font-weight: 400
+  color: #33495e
+  width: 80%
+sup
+  color: $c-light-blue
+  font-size: 0.6em
+  position: relative
+  left: -0.1em
+  cursor: pointer

@@ -1,0 +1,51 @@
+@media screen and (max-width: 1210px)
+  .instruction
+    &-wrapper
+      margin: 0 1.5em
+      h2
+        font-size: $size-30
+
+@media screen and (max-width: 992px)
+  .instruction
+    &-wrapper
+      h2
+        font-size: $size-26
+
+      .external-box
+        padding: 0em 3em 4em 2em
+        text-align: center
+        align-items: center
+
+        & .left-part
+         margin-left: 15px
+
+        & .right-part
+          img
+           height: auto
+           width: 100%
+
+@media screen and (max-width: 576px)
+  .instruction
+    &-wrapper
+      margin: 0
+      h2
+        font-size: $size-22
+
+      .external-box
+          & .left-part
+            width: 100%
+            text-align: center
+            & .heading
+              font-size: $size-16
+            & .instruction-list
+              text-align: left
+              padding-bottom: 0
+              & .list__item
+                 font-size: $size-15
+            & span
+              font-size: $size-16
+            & p
+              font-size: $size-15
+
+          & .right-part
+            display: none

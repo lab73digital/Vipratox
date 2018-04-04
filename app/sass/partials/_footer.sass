@@ -1,0 +1,43 @@
+footer
+  background-color: $c-footer-bg
+  margin-top: 2.5em
+  .author__license
+    padding: 3.5em 7.5em 3em 7.5em
+    text-align: center
+  p
+    color: $c-footer-text
+    font-size: $size-18
+    font-weight: 300
+    margin: 0.2em
+    opacity: 0
+
+  .author__copyright
+    background-color: #fff
+    .container
+      display: flex
+      justify-content: space-between
+      font-size: $size-14
+      padding: 1.5em
+      font-weight: 300
+      .copy-sygn
+        position: relative
+        top: 2px
+      .copyright__right
+        .home
+          color: $c-purple
+          font-weight: 400
+          position: relative
+          &:after
+            content: ""
+            position: absolute
+            width: 0
+            height: 2px
+            background-color: $c-purple
+            bottom: -0.2em
+            left: 0
+            transition: 0.2s linear
+          &:hover:after
+            width: 100%
+
+        & > div
+          padding: 5px
