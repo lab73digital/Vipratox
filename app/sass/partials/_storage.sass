@@ -2,46 +2,49 @@
   padding-top: 2em
   text-align: center
   p
-   @extend %opacity
-   @extend %yTransform
+    font-size: 1.6rem
+    color: #656f86
   h2
    opacity: 0
+
+  svg
+    margin: 8em 0 0
+    width: 20%
   .btn
     display: inline-block
-    font-size: $size-18
+    font-size: 1.8rem
     text-transform: uppercase
-    background: #711a75
+    background: $c-light-blue
     color: $c-white
-    width: 30.5rem
-    border-radius: 4em
+    width: 33rem
+    border-radius: 0.5em
     padding: 1.23em 0
     position: relative
     overflow: hidden
     margin: 0 30px
-    & span
+    svg
+      width: 30px
+      margin: 0
+      right: 1.5em
       position: absolute
-      padding: 0.75em 0.45em
-      border-radius: 50%
-      background: #dc0060
       top: 50%
-      right: 0
-      transform: translate(100%, -50%)
-      transition: 0.2s linear
-      opacity: 0
-      visibility: hidden
-      will-change: transform
+      transform: translate(100px, -50%) scale(0.1)
+      transition: 0.3s linear
 
-      &:hover
-        background: #a80508
+    &:hover
+      svg
+        transform: translate(0, -50%) scale(1)
 
     &--drugstore
-       background: $c-red
+       background: #dce7f5
+       color: $c-light-blue
        opacity: 0
        position: relative
        transform: translateY(50%)
        transition: background 0.2s linear
        &:hover
-          background: #8e1b1d
+          background: #3599d4
+          color: #dce7f5
 
 
     &--instr
@@ -52,39 +55,9 @@
       &:hover
         padding-right: 35px
 
-        & span
-         transition: 0.2s linear
-         transform: translate(-15%, -50%)
-         opacity: 1
-         visibility: visible
-
 .btn-box
-  margin: 95px 0 120px 0
-
-.caution
-  box-shadow:  0 0 1.1px #000000
-  height: 15vh
-  position: relative
-  opacity: 0
-  will-change: transform
-  p
-    position: absolute
-    top: 30%
-    left: 0
-    right: 0
-    font-size: 4rem
-    font-weight: 100
-    text-transform: uppercase
-    letter-spacing: -2px
-    transform: matrix(1, 0, 0, 3, 0, 0)
-    text-align: center
-    color: #959595
-    margin: 0
+  margin: 95px 0 160px 0
 
 
-
-.storage__logo
-  padding-top: 5em
-  opacity: 0
 
 

@@ -3,32 +3,49 @@
     h2
         margin-bottom: 30px
         opacity: 0
+    .heading
+      margin: 0.7em auto
+      font-size: 2.4rem
+      position: relative
+      width: 87%
+      &:after
+        content: ""
+        position: absolute
+        width: 100%
+        height: 1px
+        background-color: #deecf6
+        bottom: -1em
+        left: 0
 .usage-wrap
     display: flex
-    justify-content: center
+    justify-content: space-between
     overflow: hidden
     padding: 15px 0 50px 0
-    p
-      font-size: 16px
     & .usage-item
         flex-basis: 30%
-        padding: 200px 25px 20px 25px
         background-repeat: no-repeat
         background-size: cover
         color: #1d1d1d
         text-align: center
-        margin: 0 1em
-        box-shadow: 0 7px 34px 5px #dcd8ef
+        margin: 0 2em
+        box-shadow: 0 5px 20px 6px rgba(222,231,237,.5)
+        border-radius: 0.5em
+        p
+          font-size: 1.4rem
+          color: #656f86
+          width: 88%
+          margin: 0 auto
+          padding: 2em 0 3em
+        &:first-of-type
+          .heading
+           line-height: 57px
+        span
+           font-weight: bold
 
-        &--1
-          background-image: url(../img/img-usage-1.jpg)
-          @extend %opacity
-          @extend %yTransform
-        &--2
-          background-image: url(../img/img-usage-2.jpg)
-          @extend %opacity
-          @extend %yTransform
-        &--3
-          background-image: url(../img/img-usage-3.jpg)
-          @extend %opacity
-          @extend %yTransform
+        img
+          width: 100%
+          height: auto
+          border-top-left-radius: 0.5em
+          border-top-right-radius: 0.5em
+
+
