@@ -1,83 +1,78 @@
-@media screen and (max-width: 1210px)
-  .overview
-    &-wrapper
-      margin: 0 1.5em
-
 @media screen and (max-width: 992px)
   .overview
-    &-wrapper
-      background-position: 30% 50%
-    &-content
-      width: 70%
-      margin-left: 30%
-      img
-        width: 65%
-      h2
-        font-size: $size-26
-      h1
-        font-size: $size-24
-        padding: 0.8em
-      p
-        font-size: 15px
+    h1
+      font-size: 3rem
+      padding-bottom: 2em
+    .heading
+      font-size: 2.5rem
+    &__top
+      .left-part
+        padding-top: 0
+        padding-left: 4rem
+    &__bottom
+      .right-part
+        padding: 0
+      .overview__content
+        padding-top: 1em
+        box-shadow: none
+        p
+          font-size: 1.5rem
 
-      & .description--thing
-        font-size: 15px
-
-
+@media screen and (max-width: 756px)
+  .overview
+    .heading
+      font-size: 2rem
 @media screen and (max-width: 576px)
   .overview
-    padding-top: 7em
-    &-wrapper
-      background-image: none
-      background-repeat: no-repeat
-      background-size: contain
-      background-position: 50% 50%
-      margin: 0
-    &-content
-      padding: 0
-      width: 100%
-      margin: 0
-      h2
-        font-size: $size-22
-        padding: 1em 0 0 1em
-      h1
-        font-size: $size-17
-        margin-top: 0
-        padding: 1em 0 1em 1em
-      p
-        font-size: $size-14
-        font-weight: 500
-        margin-bottom: 0
-        padding: 0 0 1em 1.3em
-      .description
-        padding-bottom: 370px
-      .description--thing
-        padding: 0.5em 0 0.5em 1em
-        &:last-of-type
-          padding-top: 0
-          padding-bottom: 2em
-    &__img
+    img
       display: none
-    .overview--mob-bg
-      background-image: url(../img/overview-mobile-bg.png)
-      background-repeat: no-repeat
-      background-size: cover
-      background-position: 15% 35%
-      position: relative
-      .overview-mob-prod
-        display: block
-        width: 45%
-        height: auto
-        position: absolute
-        top: 60%
-        transform: translateY(-50%)
-        right: 10%
-        opacity: 0
+    .mobile-img
+      display: block
+      width: 100%
+      height: auto
+    h1
+      font-size: 2rem
+      padding-left: 20px
+      padding-right: 20px
+      .bold
+        padding: 15px
+      .blue
+        padding: 15px
+    h2
+      padding: 0 20px
+    &__top
+        .overview__content
+         padding-top: 0
+         box-shadow: none
+    &__bottom
+      .overview__content
+        padding: 0
+    &__content
+      padding-top: 0
+      p
+        font-size: 1.4rem
+        width: 100%
+        padding: 0 20px
+      .heading
+        width: 100%
+        font-size: 1.8rem
+      .left-part
+        padding: 0
+        width: 100%
+      .right-part
+        padding: 0
+        width: 100%
 
-
-  @media screen and (max-width: 330px)
+  @media screen and (max-width: 335px)
     .overview
-      &-wrapper
-      &-content
-      h2
-        font-size: $size-18
+      h1
+        font-size: 1.5rem
+        margin-top: 3rem
+
+
+
+
+
+
+
+

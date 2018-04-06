@@ -1,3 +1,15 @@
+@media screen and (max-width: 992px)
+  .indication
+    .heading
+      font-size: 2.2rem
+    &__list
+      li
+        font-size: 2rem
+    &__content
+      h3
+        width: 40%
+
+
 @media screen and (max-width: 756px)
   .indication
     background: url(../img/img-block-bg-left.png) left center no-repeat ,linear-gradient(to right,#0a6dcd,#0d8dd9) center center no-repeat
@@ -13,12 +25,26 @@
       width: 85%
 
     &__list
+      margin-top: 3em
       li
         font-size: 1.4rem
 
 
 @media screen and (max-width: 576px)
   .indication
-     &__content
-      h3
+    .title
+      margin-bottom: 1em
+    &__content
+      .heading
         font-size: 1.8rem
+
+    &-wrapper
+      width: 70%
+
+@media screen and (max-width: 335px)
+  .indication
+    .title
+    &__content
+      h3
+        margin-left: 0.5em
+
