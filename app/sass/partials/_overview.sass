@@ -1,6 +1,11 @@
 .overview
   padding-top: 6em
+  .container
+    overflow: hidden
+    padding-left: 15px
+    padding-right: 15px
   .mobile-img
+    @extend %relative
     display: none
   &__content
     background-color: #fff
@@ -8,6 +13,7 @@
     display: flex
     flex-wrap: wrap
     text-align: left
+    overflow: hidden
     .left-part
       width: 50%
     .right-part
@@ -25,14 +31,16 @@
 
     .right-part
       text-align: center
-      img
+      .desktop-img
         margin-bottom: -2px
+        @extend %relative
+
     & .overview__content
       border-bottom-left-radius: 0
       border-bottom-right-radius: 0
       padding-top: 4rem
       position: relative
-      box-shadow: 12px 0 15px -4px rgba(222,231,237,.9), -12px 0 8px -4px rgba(222,231,237,.9)
+      box-shadow: 6px 0 15px 0 rgba(222,231,237,.9), -6px 0 15px 0 rgba(222,231,237,.9)
       &:after
         content: ""
         @extend %ham
@@ -40,27 +48,35 @@
         width: 88%
         height: 1px
         background-color: #deecf6
+
   &__bottom
+    .container
+      padding-bottom: 10px
     .left-part
       img
         margin-bottom: -3px
         border-bottom-left-radius: 0.5em
         width: 100%
         height: auto
+        @extend %relative
     .right-part
       padding-top: 2rem
       padding-left: 7rem
 
+
     & .overview__content
       padding-top: 4rem
-      box-shadow: 0 0 15px 8px rgba(222,231,237,.9)
+      box-shadow: -6px 0px 15px 0px rgba(222,231,237,.9), 6px 0px 15px 0px rgba(222,231,237,.9)
       border-top-left-radius: 0
       border-top-right-radius: 0
+      overflow: hidden
+
 
   h1
     padding-top: 3em
     padding-bottom: 1em
     margin-top: 0
+    @extend %relative
     span
       border: 1px solid $c-light-blue
     .bold

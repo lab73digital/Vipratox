@@ -21,6 +21,7 @@
     justify-content: space-between
     overflow: hidden
     padding: 15px 0 50px 0
+    overflow: hidden
     & .usage-item
         flex-basis: 30%
         background-repeat: no-repeat
@@ -30,12 +31,14 @@
         margin: 0 2em
         box-shadow: 0 5px 20px 6px rgba(222,231,237,.5)
         border-radius: 0.5em
+        @extend %relative
         p
           font-size: 1.4rem
           color: #656f86
           width: 88%
           margin: 0 auto
           padding: 2em 0 3em
+          @extend %relative
         &:first-of-type
           .heading
            line-height: 57px

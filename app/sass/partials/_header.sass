@@ -5,8 +5,6 @@ header
   top: 0
   overflow: hidden
   background-color: $c-white
-  @extend %bsh
-  @extend %opacity
   & .container
     display: flex
     justify-content: space-between
@@ -38,8 +36,10 @@ header
         &:hover
           opacity: 0.7
 
-
-
+.js-box-shadow
+  @extend %bsh
+.js-box-border
+  border-bottom: 1px solid $c-light-blue
 .fixed
   position: fixed
   top: 0

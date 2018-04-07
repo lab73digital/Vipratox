@@ -20,18 +20,24 @@
 
 @media screen and (max-width: 756px)
   .overview
+    .overview__top
+      .mobile-img
+        width: 70%
+        margin: 0 auto
+    .container
+      padding: 0
     .heading
       font-size: 2rem
 @media screen and (max-width: 576px)
   .overview
-    img
+    .desktop-img
       display: none
     .mobile-img
       display: block
       width: 100%
       height: auto
     h1
-      font-size: 2rem
+      font-size: 1.5rem
       padding-left: 20px
       padding-right: 20px
       .bold
@@ -66,7 +72,6 @@
   @media screen and (max-width: 335px)
     .overview
       h1
-        font-size: 1.5rem
         margin-top: 3rem
 
 
