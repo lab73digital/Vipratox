@@ -240,7 +240,8 @@ $(document).ready(function() {
             $('.js-box-shadow').css("box-shadow", "none");
             tlMenu
                 .to('.nav-mobile', 0.3, {
-                    bottom: '0%'
+                    bottom: '0%',
+                    ease: Power3.easeOut
                 })
                 .staggerTo('.nav-mobile a', 0.5, {x:'0%'}, 0.1);
         }
@@ -248,21 +249,20 @@ $(document).ready(function() {
             tlMenu
                 .staggerTo('.nav-mobile a', 0.5, {x:'-500%'}, 0.1)
                 .to('.nav-mobile', 0.3, {
-                    bottom: '100%'
+                    bottom: '100%',
+                    ease: Power3.easeOut
                 }, "-=0.3");
         }
     }
 
     $(window).on("scroll", function(){
-        console.log(this);
-        console.log($(window).scrollTop());
         if ($(window).scrollTop() > 0) {
             $('header').removeClass('js-box-shadow');
             $('header').addClass('js-box-border')
         }
         else {
             $('header').addClass('js-box-shadow');
-            $('header').removeClass('js-box-border')
+            $('header').removeClass('js-box-border');
         }
     });
 
