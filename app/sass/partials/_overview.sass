@@ -40,7 +40,7 @@
       border-bottom-right-radius: 0
       padding-top: 4rem
       position: relative
-      box-shadow: 6px 0 15px 0 rgba(222,231,237,.9), -6px 0 15px 0 rgba(222,231,237,.9)
+      box-shadow: 6px 0 15px 0 rgba(222,231,237,.3), -6px 0 15px 0 rgba(222,231,237,.3)
       &:after
         content: ""
         @extend %ham
@@ -66,7 +66,7 @@
 
     & .overview__content
       padding-top: 4rem
-      box-shadow: -6px 0px 15px 0px rgba(222,231,237,.9), 6px 0px 15px 0px rgba(222,231,237,.9)
+      box-shadow: -6px 0px 15px 0px rgba(222,231,237,.3), 6px 0px 15px 0px rgba(222,231,237,.3), 0px 6px 15px 0 rgba(222,231,237,.3)
       border-top-left-radius: 0
       border-top-right-radius: 0
       overflow: hidden
@@ -96,7 +96,17 @@
 sup
   color: $c-light-blue
   font-size: 0.6em
-  font-weight: 800
+  font-weight: 600
   position: relative
   left: -0.1em
   cursor: pointer
+
+.tooltipster-sidetip.tooltipster-light .tooltipster-box
+  width: 370px
+  background-color: #fff
+  box-shadow: 0 6px 15px 6px rgba(222,231,237,.3)
+  color: #839bb1
+  a
+    color: #839bb1
+.tooltipster-sidetip .tooltipster-light .tooltipster-top .tooltipster-arrow-background
+  border-top-color: #fff

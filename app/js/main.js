@@ -3,7 +3,9 @@ $(document).ready(function() {
     $('.tooltip').tooltipster({
         animation: 'fade',
         delay: 200,
-        theme: 'tooltipster-light'
+        theme: 'tooltipster-light',
+        interactive: true,
+        contentAsHTML: true
     });
 
 
@@ -24,43 +26,40 @@ $(document).ready(function() {
         reverse: false
     });
     var ltHeader = new TimelineLite();
-    ltHeader.from('#header', 0.5, {top: -100})
-        .from(['.overview__top', '.overview__content'], 0.5, {
+    ltHeader
+         .from(['.overview__top', '.overview__content'], 0.5, {
             autoAlpha: 0
-        })
-         .from('h1', 0.4, {
-            autoAlpha: 0,
-            scaleX: 0.7,
-            scaleY: 0.7,
-            yPercent: -50,
-            ease: Power2.easeOut
          })
-        .from('.overview .heading', 0.3, {
-            autoAlpha: 0
-        })
-        .from('.overview__top .mobile-img', 0.3, {
+         .from('h1', 0.8, {
             autoAlpha: 0,
-            xPercent: 150,
-            ease: Back.easeOut.config(1)
-        })
+            yPercent: -20
+         })
+         .from('.overview__top .heading', 0.3, {
+            autoAlpha: 0
+         }, '-=0.2')
+         .from('.overview__top p', 0.3, {
+            autoAlpha: 0
+         })
+         .from('.overview__top .desktop-img', 0.8, {
+            autoAlpha: 0,
+            xPercent: 20
+         })
+         .from('.overview__bottom .desktop-img', 0.8, {
+            autoAlpha: 0,
+            xPercent: -5
+         }, '-=0.2')
+         .from('.overview__bottom .heading', 0.3, {
+            autoAlpha: 0
+         },'-=0.4')
+         .from('.overview__bottom p', 0.3, {
+            autoAlpha: 0
+         }, 'desktop-end')
+         .from('.overview__top .mobile-img', 0.3, {
+            autoAlpha: 0
+         }, 'desktop-end-=1.2')
         .from('.overview__bottom .mobile-img', 0.3, {
-            autoAlpha: 0,
-            xPercent: -150,
-            ease: Back.easeOut.config(1.7)
-        })
-        .from('.overview p', 0.3, {
             autoAlpha: 0
-        }, '-=0.6')
-        .from('.overview__top .desktop-img', 0.3, {
-            autoAlpha: 0,
-            xPercent: 150,
-            ease: Back.easeOut.config(1)
-        }, 'desktopImg')
-        .from('.overview__bottom .desktop-img', 0.3, {
-            autoAlpha: 0,
-            xPercent: -100,
-            ease: Back.easeOut.config(1)
-        }, 'desktopImg');
+        });
 
 
     scene.setTween(ltHeader).addTo(controller);
@@ -72,39 +71,31 @@ $(document).ready(function() {
 
     var scene2 = new ScrollMagic.Scene({
         triggerElement: '.product',
-        reverse: false
+        reverse: false,
+        offset: -200
     });
 
     var tlProduct = new TimelineLite();
     tlProduct
-    .from('.product', 0.3, {
+    .from('.product', 0, {
         autoAlpha: 0
     })
-    .from('.product h2', 0.3, {
+    .from('.product h2', 0.6, {
         autoAlpha: 0
     })
-    .from('.product__heading', 0.5, {
-        backgroundColor: 'transparent',
-        boxShadow: 'none',
-        ease: Circ.easeOut
-    })
-    .from('.product .heading', 0.1, {
+    .from('.product .heading', 0.3, {
         autoAlpha: 0
-    })
-    .from('.product .mobile-img', 0.3, {
-        autoAlpha: 0,
-        xPercent: 100,
-        ease: Back.easeOut.config(1)
+    }, '-=0.2')
+    .from('.product .mobile-img', 0.8, {
+        autoAlpha: 0
     })
     .staggerFrom('.product__list li', 0.6, {
         autoAlpha: 0,
         delay: -0.1
-    }, 0.2)
-    .from('.product .desktop-img', 0.3, {
-        autoAlpha: 0,
-        xPercent: 100,
-        ease: Back.easeOut.config(1)
-    }, '-=0.5');
+    }, 0.2, '-=0.8')
+    .from('.product .desktop-img', 0.8, {
+        autoAlpha: 0
+    }, '-=0.6');
 
     scene2.setTween(tlProduct).addTo(controller);
 
@@ -113,20 +104,22 @@ $(document).ready(function() {
     ///////////////////////////////////////////////////
     var scene3 = new ScrollMagic.Scene({
         triggerElement: '.instruction',
-        reverse: false
+        reverse: false,
+        offset: -200
     });
 
     var tlInstruction = new TimelineLite();
-    tlInstruction.staggerFrom(['.instruction .title', '.instruction__form', '.instruction__composition', '.instruction__supplementary'], 0.3, {
-        autoAlpha: 0,
-        scaleX: 0.5,
-        scaleY: 0.5
-    }, 0.2)
-        .from('.instruction img', 0.3, {
+    tlInstruction
+        .from('.instruction .title', 0.2, {
+            autoAlpha: 0
+        })
+        .from('.instruction img', 0.5, {
             autoAlpha: 0,
-            xPercent: -100,
-            ease: Back.easeOut.config(1)
-        });
+            xPercent: -20
+        })
+        .staggerFrom(['.instruction__form', '.instruction__composition', '.instruction__supplementary'], 0.3, {
+        autoAlpha: 0
+    }, 0.2, '-=0.4');
     scene3.setTween(tlInstruction).addTo(controller);
     //////////////////////////////////////////////////
     ///Animation for section indication starts here///
@@ -141,16 +134,13 @@ $(document).ready(function() {
     tlIndication.from('.indication', 0.3, {
         autoAlpha: 0
     })
-    .staggerFrom(['.indication .title', '.indication .heading'], 0.3, {
-        autoAlpha: 0,
-        scaleX: 0.5,
-        scaleY: 0.5
-    }, 0.2)
+    .staggerFrom(['.indication .title', '.indication .heading'], 0.2, {
+        autoAlpha: 0
+    }, 0.1)
     .staggerFrom(['.js-indicationFirst', '.js-indicationSecond'], 0.5, {
         autoAlpha: 0,
-        xPercent: -100,
-        delay: -0.1,
-        ease: Back.easeOut.config(1.1)
+        xPercent: -15,
+        delay: -0.1
     }, 0.3);
     scene4.setTween(tlIndication).addTo(controller);
 
@@ -166,28 +156,17 @@ $(document).ready(function() {
     });
     var tlUsage = new TimelineMax();
 
-        tlUsage.from('.usage .title', 0.3, {
-            autoAlpha: 0,
-            scaleX: 0.5,
-            scaleY: 0.5
+        tlUsage.from('.usage .title', 0.2, {
+            autoAlpha: 0
         })
         .staggerFrom('.usage-item', 0.5, {
-            yPercent: 200,
-            ease: Back.easeOut.config(1)
-        }, 0.4, 'usage-box')
-        .staggerFrom('.usage-item img', 0.3, {
-            autoAlpha: 0
+            autoAlpha: 0,
+            yPercent: 30
         }, 0.2, 'usage-box')
-        .staggerFrom('.usage-item .heading', 0.3, {
+        .staggerFrom('.usage-item p', 0.5, {
             autoAlpha: 0,
-            scaleX: 0.9,
-            scaleY: 0.9
-        }, 0.2, 'usage-box+=0.8')
-        .staggerFrom('.usage-item p', 0.3, {
-            autoAlpha: 0,
-            yPercent: 100,
-            ease: Back.easeOut.config(1)
-        }, 0.2, 'usage-box+=1.3');
+            yPercent: 30
+        }, 0.2, 'usage-box+=0.2');
 
     scene5.setTween(tlUsage).addTo(controller);
 
@@ -202,18 +181,15 @@ $(document).ready(function() {
     var tlStorage = new TimelineMax();
 
         tlStorage.staggerFrom(['.storage .title', '.storage p', '.storage svg'], 0.5, {
-            autoAlpha: 0,
-            scaleX: 0.5,
-            scaleY: 0.5
-        }, 0.3)
-        .staggerFrom('.btn-box a',0.5, {
-            autoAlpha: 0,
-            yPercent: 400,
-            ease: Back.easeOut.config(1.5)
-        }, 0.3)
-        .staggerFrom(['.caution', 'footer'], 0.3, {
             autoAlpha: 0
-        }, 0.3);
+        }, 0.3)
+        .staggerFrom('.btn-box a',0.3, {
+            autoAlpha: 0,
+            yPercent: 50
+        }, 0.2)
+        .staggerFrom(['.caution', 'footer'], 0.2, {
+            autoAlpha: 0
+        }, 0.1, '-=1');
 
     scene6.setTween(tlStorage).addTo(controller);
 
@@ -270,7 +246,5 @@ $(document).ready(function() {
             $('header').removeClass('js-box-border');
         }
     });
-
-
 
 });
