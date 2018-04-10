@@ -91,11 +91,16 @@ $(document).ready(function() {
     .from('.product .heading', 0.1, {
         autoAlpha: 0
     })
+    .from('.product .mobile-img', 0.3, {
+        autoAlpha: 0,
+        xPercent: 100,
+        ease: Back.easeOut.config(1)
+    })
     .staggerFrom('.product__list li', 0.6, {
         autoAlpha: 0,
         delay: -0.1
     }, 0.2)
-    .from('.product img', 0.3, {
+    .from('.product .desktop-img', 0.3, {
         autoAlpha: 0,
         xPercent: 100,
         ease: Back.easeOut.config(1)
