@@ -18,6 +18,13 @@ var gulp           = require('gulp'),
 // Скрипты проекта
 gulp.task('scripts', function() {
 	return gulp.src([
+		'app/libs/jquery-3.3.1/jquery-3.3.1.min.js',
+		'app/libs/tooltipster/dist/js/tooltipster.bundle.min.js',
+		'app/libs/gsap/src/minified/TweenMax.min.js',
+		'app/libs/scrollmagic/scrollmagic/minified/ScrollMagic.min.js',
+		'app/libs/scrollmagic/scrollmagic/minified/plugins/animation.gsap.min.js',
+        'app/libs/gsap/src/minified/plugins/ScrollToPlugin.min.js',
+		'app/js/scroll-jquery.js',
 		'app/js/main.js' // Всегда в конце
 		])
 	.pipe(concat('scripts.min.js'))
