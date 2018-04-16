@@ -5,9 +5,32 @@ $(document).ready(function() {
         delay: 200,
         theme: 'tooltipster-light',
         interactive: true,
-        contentAsHTML: true
+        contentAsHTML: true,
+        viewportAware: true
     });
 
+    var $window = $(window);
+    var scrollTime = 0.5;
+    var scrollDistance = 190;
+
+
+    //scroll properties start here
+
+    $window.on("mousewheel DOMMouseScroll", function (event) {
+
+        event.preventDefault();
+
+        var delta = event.originalEvent.wheelDelta / 120 || -event.originalEvent.detail / 3;
+        var scrollTop = $window.scrollTop();
+        var finalScroll = scrollTop - parseInt(delta * scrollDistance);
+
+        TweenMax.to($window, scrollTime, {
+            scrollTo: {y: finalScroll, autoKill: true},
+            ease: Power1.easeOut,
+            overwrite: 5
+        });
+
+    });
 
     ////////////////////////////////////////
     ////////////////////////////////////////
@@ -180,7 +203,7 @@ $(document).ready(function() {
     });
     var tlStorage = new TimelineMax();
 
-        tlStorage.staggerFrom(['.storage .title', '.storage p', '.storage svg'], 0.5, {
+        tlStorage.staggerFrom(['.storage .title', '.storage p'], 0.5, {
             autoAlpha: 0
         }, 0.3)
         .staggerFrom('.btn-box a',0.3, {
